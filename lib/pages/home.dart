@@ -18,7 +18,7 @@ class _HomeState extends State<Home> {
    data = data.isNotEmpty ? data : ModalRoute.of(context)!.settings.arguments as Map;
 
    //set background
-    String bgImage = data['isDayTime'] ? 'day.png' :'night.png';
+    String bgImage = data['isDayTime'] ? 'day.jpg' :'night.jpg';
 
     return Scaffold (
       backgroundColor: Colors.transparent,
@@ -27,6 +27,7 @@ class _HomeState extends State<Home> {
           image: DecorationImage(
             image:AssetImage('assets/$bgImage'),
             fit: BoxFit.cover,
+            alignment: Alignment(-0.5, 0),
           )
         ),
         child: Padding(
@@ -42,12 +43,14 @@ class _HomeState extends State<Home> {
                 },
                 icon: Icon(
                   Icons.edit_location,
-                  color: Colors.grey[300],
+                  color: Colors.redAccent,
                 ),
                 label: Text(
                   'Edit Location',
                   style: TextStyle(
-                      color:Colors.grey
+                    color:Colors.redAccent,
+                    // fontWeight: FontWeight.bold,
+                    fontSize: 18.0
                   ),
                 ),
               ),
